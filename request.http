@@ -31,6 +31,58 @@ Content-Type: application/json
 DELETE http://localhost:3100/api/v1/worker/651b218e11ed6035792aeac6 HTTP/1.1
 
 
+###
+POST http://localhost:3100/api/v1/workerDos/new-workerDos HTTP/1.1
+Content-Type: application/json
+
+{
+    "first_name": "Uno",
+    "last_name": "Dos",
+    "addres": [{
+        "zip_code": "1",
+        "city": "Manizales",
+        "municipality": "Manizales",
+        "country": "Colombia"
+    }],
+    "pets" : ["Perro","Gato"],
+    "work": [{
+        "id_work": "1",
+        "job": "Diseñador",
+        "company": [{
+            "id_company": "1",
+            "name_company":"Gelco"
+        }]
+    }]
+}
+
+###
+GET http://localhost:3100/api/v1/workerDos HTTP/1.1
+###
+GET http://localhost:3100/api/v1/workerDos/651b1c5cb004c4337b10e211 HTTP/1.1
+###
+PATCH  http://localhost:3100/api/v1/workerDos/651b2d435dd31b542cf33d4b HTTP/1.1
+Content-Type: application/json
+
+{
+    "first_name": "Maria",
+    "last_name": "Lopez",
+    "addres": [{
+        "city": "Cartagena",
+        "municipality": "Cartagena",
+        "country": "Colombia"
+    }],
+    "pets" : ["Perro","Gato","Girafa"],
+    "work": [{
+        "job": "Ingeniera",
+        "company": [{
+            "name_company":"Progel"
+        }]
+    }]
+}
+
+###
+DELETE http://localhost:3100/api/v1/workerDos/651b218e11ed6035792aeac6 HTTP/1.1
+
 
 
 

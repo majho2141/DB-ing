@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const API_VERSION= 'api/v1';
 const workerRoutes = require("./routes/worker");
+const workerDosRoutes = require("./routes/workerDos");
 //Pruebas con extension REST Client
 app.use(express.json());
 //Pruebas desde postman
@@ -11,5 +12,6 @@ app.use(express.urlencoded({extended:true}));
 
 //http://localhost:3100/api/v1/users
 app.use(`/${API_VERSION}/worker`, workerRoutes)
+app.use(`/${API_VERSION}/workerDos`, workerDosRoutes)
 
 module.exports = app;
